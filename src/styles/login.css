@@ -1,0 +1,7 @@
+.custom-google-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(120deg, #3498db, #8e44ad);
+}

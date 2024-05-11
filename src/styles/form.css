@@ -1,0 +1,55 @@
+/* EditVendorForm.css */
+
+.edit-vendor-form-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.form-header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.back-arrow {
+  transform: rotate(180deg);
+  cursor: pointer;
+  color: black;
+  margin-right: 10px;
+  font-size: 25px;
+}
+.edit-vendor-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn-update {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-update:hover {
+  background-color: #0056b3;
+}

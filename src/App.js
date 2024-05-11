@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import VendorList from "./components/vendorList";
+import EditVendorForm from "./components/editVendor";
+import CustomGoogleLoginButton from "./components/login";
 
 function App() {
+  const isAuthenticated = localStorage.getItem("token");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        {isAuthenticated ? (
+          <>
+            <Route exact path="/" element={<VendorList />} />
+            <Route path="/edit/:id" element={<EditVendorForm />} />
+          </>
+        ) : (
+          <>
+            <Route exact path="/login" element={<CustomGoogleLoginButton />} />
+            <Route path="*" element={<CustomGoogleLoginButton />} />
+          </>
+        )}
+      </Routes>
+    </Router>
   );
 }
 
