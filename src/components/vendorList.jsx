@@ -7,7 +7,7 @@ const VendorList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/vendors")
+      .get("https://basic-crud-operation-be.onrender.com/vendors")
       .then((response) => {
         setVendors(response.data);
       })
@@ -19,7 +19,9 @@ const VendorList = () => {
   const handleDelete = async (id) => {
     alert("Are you sure you want to delete this vendor?");
     try {
-      await axios.delete(`http://localhost:8000/vendors/${id}`);
+      await axios.delete(
+        `https://basic-crud-operation-be.onrender.com/vendors/${id}`
+      );
       alert("Vendor deleted successfully!");
       setVendors(vendors.filter((vendor) => vendor._id !== id));
     } catch (error) {

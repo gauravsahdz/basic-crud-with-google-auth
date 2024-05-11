@@ -21,7 +21,7 @@ const EditVendorForm = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8000/vendors/${vendorId}`)
+      .get(`https://basic-crud-operation-be.onrender.com/vendors/${vendorId}`)
       .then((response) => {
         setVendor(response.data);
       })
@@ -31,13 +31,18 @@ const EditVendorForm = () => {
   }, [vendorId]);
 
   const handleChange = (e) => {
-    setVendor({ ...vendor, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    if (name === "bankAccountNo") return; // Prevent changes to bank account number
+    setVendor({ ...vendor, [name]: value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.patch(`http://localhost:8000/vendors/${vendorId}`, vendor);
+      await axios.patch(
+        `https://basic-crud-operation-be.onrender.com/vendors/${vendorId}`,
+        vendor
+      );
       alert("Vendor updated successfully!");
       navigate("/");
     } catch (error) {
@@ -75,7 +80,7 @@ const EditVendorForm = () => {
             type="text"
             name="bankAccountNo"
             value={vendor.bankAccountNo}
-            onChange={handleChange}
+            disabled // Disable input for bank account number
           />
         </div>
         <div className="form-group">
