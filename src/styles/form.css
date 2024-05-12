@@ -4,7 +4,6 @@
   width: 50%;
   margin: 0 auto;
 }
-
 .form-header {
   display: flex;
   justify-content: start;
@@ -24,7 +23,14 @@
   border-radius: 5px;
   background-color: #f9f9f9;
 }
-
+.mandatory {
+  color: red;
+  font-size: 20px;
+}
+.info-text {
+  margin-bottom: 20px;
+  color: #6c757d;
+}
 .form-group {
   margin-bottom: 15px;
 }

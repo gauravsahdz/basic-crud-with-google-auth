@@ -15,6 +15,7 @@ function App() {
           <>
             <Route exact path="/" element={<VendorList />} />
             <Route path="/edit/:id" element={<EditVendorForm />} />
+            <Route path="/add" element={<EditVendorForm />} />
           </>
         ) : (
           <>
